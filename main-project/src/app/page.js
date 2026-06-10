@@ -21,10 +21,10 @@ export default function Home() {
         <div className="bg-gray-800/50 backdrop-blur rounded-2xl p-6 border border-gray-700">
           <div className="flex justify-between text-sm text-gray-400 mb-2">
             <span>Overall Progress</span>
-            <span>2 / 30 days</span>
+            <span>3 / 30 days</span>
           </div>
           <div className="w-full bg-gray-700 rounded-full h-2">
-            <div className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full w-[7%]"></div>
+            <div className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full w-[10%]"></div>
           </div>
         </div>
       </div>
