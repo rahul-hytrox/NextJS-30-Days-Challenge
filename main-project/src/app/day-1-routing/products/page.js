@@ -13,7 +13,7 @@ export default function ProductList() {
             <ul className="space-y-2">
                 {products.map(product => (
                     <li key={product.id}>
-                        <Link href={`/products/${product.id}`} className="text-blue-500 hover:underline">
+                        <Link href={`/day-1-routing/products/${product.id}`} className="text-blue-500 hover:underline">
                             {product.name} - ${product.price}
                         </Link>
                     </li>
