@@ -1,9 +1,6 @@
+### 📄 `day-03-navigation/questions.md`
 
----
 
-## 📄 `day-03-navigation/questions.md`
-
-```markdown
 # Day 3 – Questions & Answers
 
 ## Q1: What is the difference between `<Link>` from `next/link` and a regular `<a>` tag?
@@ -11,7 +8,6 @@
 **Answer:**  
 `<Link>` performs client‑side navigation without reloading the page. It also prefetches linked pages automatically. An `<a>` tag would cause a full browser refresh.
 
----
 
 ## Q2: How do you navigate programmatically after a form submission?
 
@@ -55,6 +51,7 @@ By default, <Link> prefetches pages when they enter the viewport (user scrolls n
 ## Q7: Write code to navigate to /products/5 using useRouter.
 
 **Answer:**  
+
 ```js
 router.push('/products/5');
 // or dynamic style:
