@@ -1,32 +1,39 @@
 # 🚀 Next.js 30 Days Challenge
 
-Daily learning and practice of Next.js from basics to advanced.
+Daily learning and practice of Next.js from basics to advanced.  
+All code lives in a **single Next.js project** (`main-project/`).  
+Each day’s theory, notes, and Q&A are stored separately for easy revision.
 
 ---
 
 ## 📅 Progress
 
-| Day | Topic | Status | Code | Notes | Q&A |
-|-----|-------|--------|------|-------|-----|
-| 01 | Intro & File-based Routing | ✅ Done | [Code](./day-01-intro-routing/code) | [Notes](./day-01-intro-routing/notes.md) | [Q&A](./day-01-intro-routing/questions.md) |
-| 02 | Server vs Client Components | ✅ Done | [Code](./day-02-server-client/code) | [Notes](./day-02-server-client/notes.md) | [Q&A](./day-02-server-client/questions.md) |
-| 03 | Navigation (Link, useRouter) | 🔜 In Progress | - | - | - |
+| Day | Topic | Status | Code (inside main-project) | Notes | Q&A |
+|-----|-------|--------|----------------------------|-------|-----|
+| 01 | Intro & File-based Routing | ✅ Done | [`/day-1-routing`](./main-project/src/app/day-1-routing) | [Notes](./day-01-intro-routing/notes.md) | [Q&A](./day-01-intro-routing/questions.md) |
+| 02 | Server vs Client Components | ✅ Done | [`/day-2-server-client`](./main-project/src/app/day-2-server-client) | [Notes](./day-02-server-client/notes.md) | [Q&A](./day-02-server-client/questions.md) |
+| 03 | Navigation (Link, useRouter) | 🔜 In Progress | – | – | – |
 
 ---
 
 ## 🗂️ Repository Structure
 
+
 ```
 /
 ├── README.md
-├── day-01-intro-routing/
-│   ├── code/
-│   ├── notes.md
-│   └── questions.md
-├── day-02-server-client/
-│   ├── code/
-│   ├── notes.md
-│   └── questions.md
+├── main-project/ # Single Next.js app
+│ └── src/app/
+│ ├── page.js
+│ ├── day-1-routing/ # Code for Day 1
+│ ├── day-2-server-client/ # Code for Day 2
+│ └── ...
+├── day-01-intro-routing/ # Notes & Q&A for Day 1
+│ ├── notes.md
+│ └── questions.md
+├── day-02-server-client/ # Notes & Q&A for Day 2
+│ ├── notes.md
+│ └── questions.md
 └── ...
 ```
 
@@ -34,22 +41,25 @@ Daily learning and practice of Next.js from basics to advanced.
 
 ## 🛠️ How to Use
 
-- Each day's folder contains theory + practical code
-- Run `npm run dev` inside the `code/` folder
-- Review Q&A for revision
-
----
+1. **Run the main project**
+   ```bash
+   cd main-project
+   npm install
+   npm run dev
 
 ## 📚 Resources
 
 - [Official Next.js Docs](https://nextjs.org/docs)
-- [This Repository](https://github.com/your-username/nextjs-30-days-challenge)
+- [This Repository](https://github.com/rahul-hytrox/NextJS-30-Days-Challenge)
 
 ---
 
 ## ✨ Daily Routine
 
-1. Learn concept (Hindi explanation here, English notes on GitHub)
-2. Write code
-3. Answer questions
+1. Learn concept 
+2. Write code inside main-project/src/app/day-XX-*/
+3. Answer questions and update notes
 4. Push to GitHub
+
+
+---
