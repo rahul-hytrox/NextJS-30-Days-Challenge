@@ -1,20 +1,15 @@
-# Day 1: Next.js Intro & File-based Routing
+# 🚀 Next.js 30 Days Challenge
 
-## Topics Covered
-- Why Next.js over React?
-- Project setup with `create-next-app`
-- App Router and folder structure
-- Basic routes: `page.js`
-- Dynamic routes: `[slug]/page.js`
-- Nested routes
+## 📌 Objective
+Daily practice of Next.js from basics to advanced. Each day covers a new concept with code, Q&A, and notes.
 
-## My Learning
-- Next.js automatically creates routes from folders.
-- Har `page.js` ek URL represent karta hai.
-- Dynamic segment ke liye `[folderName]`.
+## 📅 Progress
 
-## Code Example
-See `/code` folder for the actual project.
+| Day | Topic | Status | Code | Notes |
+|-----|-------|--------|------|-------|
+| 01 | Intro to Next.js & File-based Routing | ✅ Done | [Code](./day-01/code) | [Notes](./day-01/notes.md) |
+| 02 | Server vs Client Components | ✅ Done | [Code](./day-02/code) | [Notes](./day-02/notes.md) |
+| 03 | Navigation (Link, useRouter) | 🔜 | - | - |
+| ... | ... | ... | ... | ... |
 
-## Screenshot (optional)
-![homepage](./screenshot.png)
+## 🗂️ Repository Structure
