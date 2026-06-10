@@ -72,12 +72,26 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* More days placeholders */}
-          <div className="bg-gray-800/20 rounded-xl p-6 border border-gray-700/30 backdrop-blur-sm">
-            <div className="text-xs font-mono text-gray-500 bg-gray-700/30 px-2 py-1 rounded inline-block mb-3">Day 03</div>
-            <h3 className="text-xl font-bold mb-2 text-gray-400">Navigation</h3>
-            <p className="text-gray-500 text-sm">Link component, useRouter, active links, programmatic navigation.</p>
-          </div>
+          {/* Day 3 Card - Updated */}
+
+          <Link href="/day-3-navigation" className="group">
+            <div className="bg-gray-800/40 hover:bg-gray-800/70 transition-all rounded-xl p-6 border border-gray-700 hover:border-purple-500/50 backdrop-blur-sm">
+              <div className="flex justify-between items-start mb-3">
+                <span className="text-xs font-mono text-purple-400 bg-purple-500/10 px-2 py-1 rounded">Day 03</span>
+                <span className="text-green-400 text-sm">✅ Completed</span>
+              </div>
+              <h3 className="text-xl font-bold mb-2 group-hover:text-purple-400 transition">Navigation</h3>
+              <p className="text-gray-400 text-sm mb-4">Link component, useRouter, active links, programmatic navigation.</p>
+              <div className="flex items-center text-purple-400 text-sm font-medium gap-1">
+                Explore →
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+
           <div className="bg-gray-800/20 rounded-xl p-6 border border-gray-700/30 backdrop-blur-sm">
             <div className="text-xs font-mono text-gray-500 bg-gray-700/30 px-2 py-1 rounded inline-block mb-3">Day 04</div>
             <h3 className="text-xl font-bold mb-2 text-gray-400">Layouts & Templates</h3>
