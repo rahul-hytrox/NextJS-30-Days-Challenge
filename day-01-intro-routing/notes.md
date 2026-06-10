@@ -97,3 +97,15 @@ npm run dev
 | `npm run dev` | Start development server with hot reload |
 | `npm run build` | Build the app for production |
 | `npm start` | Start the production server |
+
+
+### Next.js 15 Breaking Change: `params` is now a Promise
+
+In Next.js 15, dynamic route parameters are now asynchronous. Always use `async` and `await`:
+
+```javascript
+// ✅ Correct
+export default async function Page({ params }) {
+  const { id } = await params;
+  // ...
+}
