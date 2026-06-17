@@ -91,12 +91,30 @@ export default function Home() {
             </div>
           </Link>
 
+          {/* Day 4 Card - Updated */}
 
-          <div className="bg-gray-800/20 rounded-xl p-6 border border-gray-700/30 backdrop-blur-sm">
+          <Link href="/day-4-layouts" className="group">
+            <div className="bg-gray-800/40 hover:bg-gray-800/70 transition-all rounded-xl p-6 border border-gray-700 hover:border-purple-500/50 backdrop-blur-sm">
+              <div className="flex justify-between items-start mb-3">
+                <span className="text-xs font-mono text-purple-400 bg-purple-500/10 px-2 py-1 rounded">Day 04</span>
+                <span className="text-green-400 text-sm">✅ Completed</span>
+              </div>
+              <h3 className="text-xl font-bold mb-2 group-hover:text-purple-400 transition">Layouts & Templates</h3>
+              <p className="text-gray-400 text-sm mb-4">Shared layouts, nested layouts, persist state.</p>
+              <div className="flex items-center text-purple-400 text-sm font-medium gap-1">
+                Explore →
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* <div className="bg-gray-800/20 rounded-xl p-6 border border-gray-700/30 backdrop-blur-sm">
             <div className="text-xs font-mono text-gray-500 bg-gray-700/30 px-2 py-1 rounded inline-block mb-3">Day 04</div>
             <h3 className="text-xl font-bold mb-2 text-gray-400">Layouts & Templates</h3>
             <p className="text-gray-500 text-sm">Shared layouts, nested layouts, persist state.</p>
-          </div>
+          </div> */}
         </div>
       </div>
 
