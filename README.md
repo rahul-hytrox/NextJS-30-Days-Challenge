@@ -13,7 +13,7 @@ Each day’s theory, notes, and Q&A are stored separately for easy revision.
 | 01 | Intro & File-based Routing | ✅ Done | [`/day-1-routing`](./main-project/src/app/day-1-routing) | [Notes](./day-01-intro-routing/notes.md) | [Q&A](./day-01-intro-routing/questions.md) |
 | 02 | Server vs Client Components | ✅ Done | [`/day-2-server-client`](./main-project/src/app/day-2-server-client) | [Notes](./day-02-server-client/notes.md) | [Q&A](./day-02-server-client/questions.md) |
 | 03 | Navigation (Link, useRouter) | ✅ Done | [`/day-03-navigation`](./main-project/src/app/day-3-navigation) | [Notes](./day-03-navigation/notes.md) | [Q&A](./day-03-navigation/questions.md) |
-| 04 | Layouts & Nested Layouts | ✅ Done | [`/day-04-layouts`](./main-project/src/app/day-4-layouts) | [Notes](./day-04-layouts/notes.md) | [Q&A](./day-04-layouts/questions.md) |
+| 04 | Layouts & Nested Layouts | ✅ Done | [`/day-04-layouts`](./main-project/src/app/day-4-layouts) | [Notes](./day-4-layouts/notes.md) | [Q&A](./day-4-layouts/questions.md) |
 | 05 | Layouts & Nested Layouts | 🔜 In Progress | – | – | – |
 
 ---
