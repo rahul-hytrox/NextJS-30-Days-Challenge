@@ -21,10 +21,10 @@ export default function Home() {
         <div className="bg-gray-800/50 backdrop-blur rounded-2xl p-6 border border-gray-700">
           <div className="flex justify-between text-sm text-gray-400 mb-2">
             <span>Overall Progress</span>
-            <span>3 / 30 days</span>
+            <span>6 / 30 days</span>
           </div>
           <div className="w-full bg-gray-700 rounded-full h-2">
-            <div className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full w-[17%]"></div>
+            <div className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full w-[20%]"></div>
           </div>
         </div>
       </div>
@@ -120,6 +120,24 @@ export default function Home() {
               <h3 className="text-xl font-bold mb-2 group-hover:text-yellow-400 transition">Loading UI & Suspense</h3>
               <p className="text-gray-400 text-sm mb-4">Data fetch delay handle karna seekha. Pehle loader (spinner) dikhta hai, phir actual page content.</p>
               <div className="flex items-center text-yellow-400 text-sm font-medium gap-1">
+                Explore →
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* Day 5 Card */}
+          <Link href="/day-6-error" className="group">
+            <div className="bg-gray-800/40 hover:bg-gray-800/70 transition-all rounded-xl p-6 border border-gray-700 hover:border-red-500/50 backdrop-blur-sm">
+              <div className="flex justify-between items-start mb-3">
+                <span className="text-xs font-mono text-red-400 bg-red-500/10 px-2 py-1 rounded">Day 06</span>
+                <span className="text-green-400 text-sm">✅ Completed</span>
+              </div>
+              <h3 className="text-xl font-bold mb-2 group-hover:text-red-400 transition">Error Handling (error.js)</h3>
+              <p className="text-gray-400 text-sm mb-4">Custom error page for API failures and component crashes. Includes "Try Again" reset button.</p>
+              <div className="flex items-center text-red-400 text-sm font-medium gap-1">
                 Explore →
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
