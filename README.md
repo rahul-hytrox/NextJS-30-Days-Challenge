@@ -15,7 +15,7 @@ Each day’s theory, notes, and Q&A are stored separately for easy revision.
 | 03 | Navigation (Link, useRouter) | ✅ Done | [`/day-03-navigation`](./main-project/src/app/day-3-navigation) | [Notes](./day-03-navigation/notes.md) | [Q&A](./day-03-navigation/questions.md) |
 | 04 | Layouts & Nested Layouts | ✅ Done | [`/day-04-layouts`](./main-project/src/app/day-4-layouts) | [Notes](./day-04-layouts/notes.md) | [Q&A](./day-04-layouts/questions.md) |
 | 05 | Loading UI & Suspense | ✅ Done | [`/day-05-loading`](./main-project/src/app/day-5-loading) | [Notes](./day-05-loading/notes.md) | [Q&A](./day-05-loading/questions.md) |
-| 06 | Loading UI & Suspense | 🔜 In Progress | – | – | – |
+| 06 | Error Handling | 🔜 In Progress | – | – | – |
 
 ---
 
