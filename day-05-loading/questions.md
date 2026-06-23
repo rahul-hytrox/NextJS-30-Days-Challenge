@@ -1,7 +1,7 @@
 
 ---
 
-### 📄 `day-05-loading/questions.md` (English)
+### 📄 `day-05-loading/questions.md`
 
 ```markdown
 # Day 5 – Questions & Answers
