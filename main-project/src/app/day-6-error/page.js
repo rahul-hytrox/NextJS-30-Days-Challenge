@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 async function getData() {
     throw new Error('Something went wrong, while fetching data!');
 }
