@@ -24,7 +24,7 @@ export default function Home() {
             <span>3 / 30 days</span>
           </div>
           <div className="w-full bg-gray-700 rounded-full h-2">
-            <div className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full w-[10%]"></div>
+            <div className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full w-[17%]"></div>
           </div>
         </div>
       </div>
@@ -102,6 +102,24 @@ export default function Home() {
               <h3 className="text-xl font-bold mb-2 group-hover:text-purple-400 transition">Layouts & Templates</h3>
               <p className="text-gray-400 text-sm mb-4">Shared layouts, nested layouts, persist state.</p>
               <div className="flex items-center text-purple-400 text-sm font-medium gap-1">
+                Explore →
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* Day 5 Card */}
+          <Link href="/day-5-loading" className="group">
+            <div className="bg-gray-800/40 hover:bg-gray-800/70 transition-all rounded-xl p-6 border border-gray-700 hover:border-yellow-500/50 backdrop-blur-sm">
+              <div className="flex justify-between items-start mb-3">
+                <span className="text-xs font-mono text-yellow-400 bg-yellow-500/10 px-2 py-1 rounded">Day 05</span>
+                <span className="text-green-400 text-sm">✅ Completed</span>
+              </div>
+              <h3 className="text-xl font-bold mb-2 group-hover:text-yellow-400 transition">Loading UI & Suspense</h3>
+              <p className="text-gray-400 text-sm mb-4">Data fetch delay handle karna seekha. Pehle loader (spinner) dikhta hai, phir actual page content.</p>
+              <div className="flex items-center text-yellow-400 text-sm font-medium gap-1">
                 Explore →
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
