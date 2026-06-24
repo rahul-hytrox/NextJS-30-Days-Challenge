@@ -211,6 +211,40 @@ A: `useMemo` memoizes a **value** computed inside a component (used internally).
 
 ---
 
+## 10. React 18/19 Advanced Features
+
+**Q51. What is `useTransition` and what problem does it solve?**
+A: `useTransition` lets you mark a state update as **non-urgent**, so React can keep urgent updates (like typing in an input) responsive while a slower/heavier update (like filtering a huge list) happens in the background without blocking the UI. It returns `[isPending, startTransition]` — `isPending` is a flag to show a loading state, and `startTransition` wraps the low-priority update.
+
+**Q52. What is `useDeferredValue` and how is it different from `useTransition`?**
+A: `useDeferredValue` defers the re-render of a **value** itself (not a state setter you control) — useful when the value comes from props or external state. `useTransition` wraps a state-update *function* you call yourself. Use `useTransition` when you trigger the update; use `useDeferredValue` when you just receive a value and want its dependent UI to lag behind smoothly.
+
+**Q53. Give a practical example of where you'd use `useTransition`.**
+A: A search/filter UI with a large dataset — typing in the search box updates instantly (urgent), while the filtered results list (expensive to compute/render) updates slightly after, wrapped in `startTransition`, so typing never feels laggy.
+
+**Q54. What are React Server Components (RSC)? Why were they introduced?**
+A: Server Components are components that render **only on the server** — their code never gets bundled and shipped to the browser. They were introduced to reduce client-side JS bundle size, allow direct backend access (DB queries, file reads, secrets) inside components, and improve initial load performance, especially for content-heavy pages.
+
+**Q55. How do you mark a component as a Client Component in a Server-Components-based app (e.g., Next.js App Router)?**
+A: By adding the `"use client"` directive at the very top of the file. This is required for any component that uses hooks (`useState`, `useEffect`), event handlers, or browser-only APIs — since Server Components can't use any of these.
+
+**Q56. Can a Server Component use `useState` or `useEffect`?**
+A: No. Server Components run only on the server and have no client-side lifecycle — hooks like `useState`/`useEffect` require the browser/client runtime, so any component needing interactivity must be a Client Component (`"use client"`).
+
+**Q57. Why is this topic relevant to Next.js specifically?**
+A: Next.js 15+ runs on React 19, and its **App Router** architecture defaults every component to a Server Component unless explicitly marked `"use client"`. Understanding RSC is essential for working with modern Next.js projects, not just an optional React feature.
+
+**Q58. What is the React Compiler? Is it a hook?**
+A: No, it's not a hook — it's a **build-time tool** (a Babel plugin) introduced with React 19 that automatically analyzes component code and inserts memoization (similar to what `useMemo`/`useCallback`/`React.memo` do manually) without the developer writing it by hand. The goal is to let developers write simple, "naive" React code while the compiler handles performance optimization automatically.
+
+**Q59. Does the React Compiler mean you should stop using `useMemo`/`useCallback`?**
+A: Not entirely — the compiler aims to make most manual memoization unnecessary in newer codebases, but adoption is still rolling out, and existing codebases/libraries still rely on manual memoization. It's good to understand both: manual hooks (for current/legacy code and interviews) and the compiler's purpose (for where React is heading).
+
+**Q60. What React version introduced `useTransition`/`useDeferredValue`, and what version introduced Server Components + React Compiler as stable features?**
+A: `useTransition` and `useDeferredValue` were introduced in **React 18** (as part of concurrent rendering features). Server Components (as a stable, App-Router-integrated feature) and the React Compiler are associated with **React 19**.
+
+---
+
 ## Bonus: Rapid-Fire One-Liners
 
 | Question | Answer |
@@ -225,3 +259,8 @@ A: `useMemo` memoizes a **value** computed inside a component (used internally).
 | What's the lightest global state library mentioned? | Zustand |
 | What pattern solves "function as a prop"? | Render props |
 | What's the modern replacement for most HOCs? | Custom Hooks |
+| Which hook marks an update as low priority? | `useTransition` |
+| Which hook defers re-render of a value? | `useDeferredValue` |
+| Which directive marks a Client Component? | `"use client"` |
+| What ships zero JS to the browser? | Server Components |
+| What automates memoization at build time? | React Compiler |

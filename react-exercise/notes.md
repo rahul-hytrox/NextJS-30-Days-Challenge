@@ -14,6 +14,7 @@
 7. [Forms & Validation](#7-forms--validation)
 8. [API & Data Fetching](#8-api--data-fetching)
 9. [Performance Optimization](#9-performance-optimization)
+10. [React 18/19 Advanced Features](#10-react-1819-advanced-features)
 
 ---
 
@@ -1046,6 +1047,139 @@ function BigList({ items }) {
 
 ---
 
+## 10. React 18/19 Advanced Features
+
+### 10.1 useTransition
+Lets you mark a state update as **non-urgent ("transition")**, so React keeps the UI responsive by not blocking urgent updates (like typing) while the non-urgent update renders in the background.
+
+```jsx
+import { useTransition, useState } from 'react';
+
+function SearchPage() {
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState([]);
+  const [isPending, startTransition] = useTransition();
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setQuery(value); // urgent — updates input immediately
+
+    startTransition(() => {
+      // non-urgent — heavy filtering won't block typing
+      setResults(filterHugeList(value));
+    });
+  };
+
+  return (
+    <>
+      <input value={query} onChange={handleChange} />
+      {isPending && <p>Updating results...</p>}
+      <ResultsList results={results} />
+    </>
+  );
+}
+```
+- `isPending` → boolean flag to show a loading indicator while the transition is in progress
+- `startTransition(callback)` → wraps the state update you want to deprioritize
+
+---
+
+### 10.2 useDeferredValue
+Similar goal to `useTransition`, but used to **defer re-rendering a value** (rather than wrapping a state setter) — useful when you don't control the state update itself (e.g., value comes from a parent/prop).
+
+```jsx
+import { useDeferredValue, useState } from 'react';
+
+function SearchPage() {
+  const [query, setQuery] = useState("");
+  const deferredQuery = useDeferredValue(query);
+
+  return (
+    <>
+      <input value={query} onChange={(e) => setQuery(e.target.value)} />
+      {/* This list re-renders with a slight delay, keeping typing smooth */}
+      <ResultsList query={deferredQuery} />
+    </>
+  );
+}
+```
+
+**`useTransition` vs `useDeferredValue`:**
+| | useTransition | useDeferredValue |
+|---|---|---|
+| Wraps | A state **update function** | A **value** |
+| Use case | You trigger the update yourself | Value comes from elsewhere (props/state you don't set directly) |
+| Gives `isPending`? | Yes | No (compare `value !== deferredValue` to detect staleness) |
+
+---
+
+### 10.3 React Server Components (RSC) — React 19 / Next.js 15+
+Server Components render **on the server only** — their code (and dependencies) never ships to the browser, reducing bundle size and allowing direct backend access (DB queries, file system, secrets) inside components.
+
+```jsx
+// app/users/page.jsx  (Server Component by default in Next.js App Router)
+async function UsersPage() {
+  const users = await db.user.findMany(); // direct DB call, runs only on server
+
+  return (
+    <ul>
+      {users.map((u) => <li key={u.id}>{u.name}</li>)}
+    </ul>
+  );
+}
+
+export default UsersPage;
+```
+
+**Client Component** (needs interactivity — state, effects, browser APIs) must be explicitly marked:
+```jsx
+"use client"; // required directive at the top of the file
+
+import { useState } from 'react';
+
+function LikeButton() {
+  const [liked, setLiked] = useState(false);
+  return <button onClick={() => setLiked(!liked)}>{liked ? "❤️" : "🤍"}</button>;
+}
+```
+
+| | Server Component | Client Component |
+|---|---|---|
+| Runs on | Server only | Server (initial HTML) + Browser (hydration) |
+| Can use hooks (`useState`, `useEffect`)? | No | Yes |
+| Can access DB/secrets directly? | Yes | No |
+| Ships JS to browser? | No (zero bundle cost) | Yes |
+| Directive | None (default) | `"use client"` |
+
+> **Why it matters:** Next.js 15+ uses React 19, and the **App Router** is built around Server Components by default — this is now the standard architecture for new Next.js apps, not just an optional feature.
+
+---
+
+### 10.4 React Compiler (React 19)
+The React Compiler is a **build-time tool** (not a hook/API) that automatically memoizes components and values — effectively doing the job of `useMemo`, `useCallback`, and `React.memo` for you, automatically, without manual code changes.
+
+```jsx
+// Before (manual memoization, React 18 style):
+const ExpensiveList = React.memo(function ExpensiveList({ items }) {
+  const sorted = useMemo(() => items.sort(), [items]);
+  return <List data={sorted} />;
+});
+
+// With React Compiler enabled, you can often just write:
+function ExpensiveList({ items }) {
+  const sorted = items.sort();
+  return <List data={sorted} />;
+}
+// Compiler automatically detects what should be memoized at build time.
+```
+
+**Key points:**
+- It's a **Babel-based compiler plugin**, analyzes your component code and inserts memoization automatically.
+- Goal: write normal, simple React code — let the compiler handle performance optimization instead of manually sprinkling `useMemo`/`useCallback` everywhere.
+- Still rolling out gradually across the ecosystem (check current adoption status before relying on it in production, since tooling/support is evolving).
+
+---
+
 ## Quick Revision Cheat Sheet
 
 | Concept | One-liner |
@@ -1069,3 +1203,7 @@ function BigList({ items }) {
 | React.memo | Skip re-render if props unchanged |
 | Code splitting | Load components only when needed |
 | Virtualization | Render only visible list items |
+| useTransition | Mark a state update as low-priority/non-urgent |
+| useDeferredValue | Defer re-rendering of a value to keep UI responsive |
+| Server Components | Render on server only, zero JS shipped to browser |
+| React Compiler | Build-time auto-memoization, reduces manual useMemo/useCallback |
