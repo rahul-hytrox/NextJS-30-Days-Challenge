@@ -164,6 +164,23 @@ export default function Home() {
             </div>
           </Link>
 
+          {/* Day 8 API Routes */}
+          <Link href="/day-8-api-demo" className="group">
+            <div className="bg-gray-800/40 hover:bg-gray-800/70 transition-all rounded-xl p-6 border border-gray-700 hover:border-teal-500/50 backdrop-blur-sm">
+              <div className="flex justify-between items-start mb-3">
+                <span className="text-xs font-mono text-teal-400 bg-teal-500/10 px-2 py-1 rounded">Day 08</span>
+                <span className="text-green-400 text-sm">✅ Completed</span>
+              </div>
+              <h3 className="text-xl font-bold mb-2 group-hover:text-teal-400 transition">API Routes (Route Handlers)</h3>
+              <p className="text-gray-400 text-sm mb-4">GET, POST, and dynamic API routes inside Next.js. Build full-stack features without a separate backend.</p>
+              <div className="flex items-center text-teal-400 text-sm font-medium gap-1">
+                Explore →
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          </Link>
 
           {/* <div className="bg-gray-800/20 rounded-xl p-6 border border-gray-700/30 backdrop-blur-sm">
             <div className="text-xs font-mono text-gray-500 bg-gray-700/30 px-2 py-1 rounded inline-block mb-3">Day 04</div>
