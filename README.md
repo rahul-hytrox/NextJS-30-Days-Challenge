@@ -18,7 +18,8 @@ Each day’s theory, notes, and Q&A are stored separately for easy revision.
 | 05 | Loading UI & Suspense | ✅ Done | [`/day-05-loading`](./main-project/src/app/day-5-loading) | [Notes](./day-05-loading/notes.md) | [Q&A](./day-05-loading/questions.md) |
 | 06 | Error Handling | ✅ Done | [`/day-06-error`](./main-project/src/app/day-6-error) | [Notes](./day-06-error/notes.md) | [Q&A](./day-06-error/questions.md) |
 | 07 | Custom 404 Page | ✅ Done | [`/day-07-not-found`](./main-project/src/app/day-07-not-found) | [Notes](./day-07-not-found/notes.md) | [Q&A](./day-07-not-found/questions.md) |
-| 08 | API Routes (Backend in Next.js) | 🔜 In Progress | – | – | – |
+| 08 | API Routes (Backend in Next.js) | ✅ Done | [`/day-8-api-demo`](./main-project/src/app/day-8-api-demo) | [Notes](./day-08-api-routes/notes.md) | [Q&A](./day-08-api-routes/questions.md) |
+| 09 | Data Fetching Patterns | 🔜 In Progress | – | – | – |
 
 ---
 

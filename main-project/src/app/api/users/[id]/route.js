@@ -1,24 +1,21 @@
-// Mock database (in-memory)
-let users = [
-    { id: 1, name: 'Rahul' },
-    { id: 2, name: 'Sneha' },
-];
-
-// GET /api/users
-export async function GET() {
-    return Response.json({ users });
+// GET /api/users/123
+export async function GET(request, { params }) {
+    const { id } = await params;
+    return Response.json({
+        user: {
+            id,
+            name: `User ${id}`,
+            email: `user${id}@example.com`
+        }
+    });
 }
 
-// POST /api/users
-export async function POST(request) {
+// PUT /api/users/123
+export async function PUT(request, { params }) {
+    const { id } = await params;
     const body = await request.json();
-    const newUser = {
-        id: users.length + 1,
-        name: body.name
-    };
-    users.push(newUser);
     return Response.json({
-        message: 'User created!',
-        user: newUser
+        message: `User ${id} updated successfully!`,
+        updatedData: body
     });
 }

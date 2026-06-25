@@ -193,6 +193,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-gray-800 mt-12 py-8 text-center text-gray-500 text-sm">
         <p>30 Days of Next.js — Building step by step | 👨‍💻 Daily Practice</p>
+        <p className="text-gray-600">Made by <Link href="https://github.com/rahul-hytrox">Rahul P.</Link></p>
       </footer>
     </div>
   );

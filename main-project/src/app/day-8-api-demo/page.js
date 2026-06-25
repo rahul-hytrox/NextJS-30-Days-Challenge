@@ -9,10 +9,15 @@ export default function ApiDemo() {
     // Fetch Users (GET)
     const fetchUsers = async () => {
         setLoading(true);
-        const res = await fetch('/api/users');
-        const data = await res.json();
-        setUsers(data.users);
-        setLoading(false);
+        try {
+            const res = await fetch('/api/users');
+            const data = await res.json(); // ✅ Ye line error de rahi thi
+            setUsers(data.users);
+        } catch (error) {
+            console.error('Error:', error);
+        } finally {
+            setLoading(false);
+        }
     };
 
     // Add User (POST)
